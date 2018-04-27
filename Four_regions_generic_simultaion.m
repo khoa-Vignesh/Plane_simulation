@@ -5,15 +5,15 @@ plane = zeros(1000,1000);
 plane2 = zeros(1000,1000);
 flow = zeros(1000,1000,2);
 %FOE Variables
-y= 2 ;
+y= 0.05; %varies depending on the Yfoe value
 pixel_size = 1e-5;
-f = 0.0005;
+f = 0.005; %focal length
 %Translation Parameters
-Tz = -0.20;
-Ty = 0.8;
+Tz = -0.005; 
+Ty = 0.1;
 %Loop to find the optical flow
-for z=0.5:0.001:30
-    for x = -1.5:0.001:1.5
+for z=1:0.001:20 %depth 
+    for x = -0.5:0.001:0.5 %4 meters 
         z_n = z+Tz;
         y_n = y+Ty;         
         i = (f/pixel_size)*(y/z);
